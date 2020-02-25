@@ -1,0 +1,34 @@
+﻿<Window x:Class="Judgement.windows.judge_history.Judge_History"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Judgement.windows.judge_history"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="评测历史" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="235*"/>
+            <ColumnDefinition Width="161*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="datagrid" AutoGenerateColumns="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden"  RowHeaderWidth="0" IsReadOnly="True" BorderBrush="Transparent" BorderThickness="1" Grid.ColumnSpan="2" Loaded="Datagrid_Loaded">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                    <Setter Property="FontSize" Value="20"></Setter>
+                    <Setter Property="FontWeight" Value="ExtraBold"></Setter>
+                    <Setter Property="Height" Value="50"></Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="UserName" Binding="{Binding num}" Header="考号" FontSize="20"/>
+                <DataGridTextColumn x:Name="UserSex" Binding="{Binding score}" Header="题目情况" FontSize="20"/>
+                <DataGridTextColumn x:Name="Useradd" Binding="{Binding add}" Header="总分" FontSize="20"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
